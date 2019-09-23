@@ -8,40 +8,38 @@
 </head>
 <body style="background-color:#F55F5F">
     <div class="container">
-        <div class="row">
-            <form>   
-                <div class="form-group">   
-                    <div class="col-cs-4">
-                    </div>
-                    <div class="col-cs-4">
-                        <br>
-                        <br>
-                        <center>
-                        <h1>Algorithmic Dating</h1>
-                        <br><h3>What is your current age?</h3>
-                        <input type="text" id="startAge"><br>
-                        <br><h3>What age would you like to be married by?<br></h3>
-                        <input type="text" id="endAge"><br>
-                        <br>
-                        <button type="button" class="btn btn-primary btn-lg" onclick="calculate()">Submit</button>
-                        <br>
-                        <br>
-                        <br>
-                        <h1 id="answer"></h1>
-                        <br>
-                        <h2 id="info"></h2>
-                        <br>
-                        <p id="explanation"></p>
-                        <br>
-                        <br>
-                    </center>
-                    </div>
-                    <div class="col-cs-4">  
-                    </div>
-                </form>
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+                <br>
+                <center>
+                <h1>Algorithmic Dating</h1>
+                <br>
+                <br>
+                <br><h3>When did you start dating?</h3>
+                <input type="text" id="startAge"><br>
+                <br>
+                <br><h3>What age would you like to be married by?<br></h3>
+                <input type="text" id="endAge"><br>
+                <br>
+                <button type="button" class="btn btn-primary btn-lg" onclick="calculate()">Submit</button>
+                <br>
+                <br>
+                <br>
+                <h1 id="answer"></h1>
+                <br>
+                <h2 id="info"></h2>
+                <br>
+                <h4 id="moreInfo"></h4>
+                <br>
+                </center>
             </div>
+            <br>
+            <br>
+            <br>
+            <br>
         </div>
     </div>
+    <footer>Created By <a href="https://github.com/anthonyjmarchi/">Anthony Marchi</a></footer>
   <script>
         function calculate() {
             var start = parseInt(document.getElementById('startAge').value);
@@ -49,18 +47,13 @@
             var age = end - start;
             var kepler = age * 0.37;
             var final = start + kepler;
+         
             document.getElementById("answer").innerText= final + " years old";
-            document.getElementById("info").innerText= "After this age, you should marry the next person you meet who is better than all the previous people you've dated thus far.  Statististically this is the best person you'll ever meet."
-            document.getElementById("explanation").innerText= "This result is based on the Secretary Problem:" 
-            + " The basic form of the problem is the following: imagine an administrator who wants to hire the best secretary out of n rankable applicants for a position." 
-            + " The applicants are interviewed one by one in random order.  A decision about each particular applicant is to be made immediately after the interview." 
-            + " Once rejected, an applicant cannot be recalled. During the interview, the administrator gains information sufficient to rank the applicant among all applicants interviewed so far," 
-            + "but is unaware of the quality of yet unseen applicants.  The question is about the optimal strategy (stopping rule) to maximize the probability of selecting the best applicant."
-            + " If the decision can be deferred to the end, this can be solved by the simple maximum selection algorithm of tracking the running maximum (and who achieved it),"
-            + "and selecting the overall maximum at the end.  The difficulty is that the decision must be made immediately."
-            + " More Info: https://en.wikipedia.org/wiki/Secretary_problem";
+            document.getElementById("info").innerText= "At this age, you should marry the next person you meet who is better than all the previous people you've dated thus far."
+            document.getElementById("moreInfo").innerText = "This result is based on Optimal Stopping Theory.  This theory suggests that you have the highest odds of picking the best option when you are 37% of the way through the event."
         }
  </script>
 </body>
 </html>
+
 
